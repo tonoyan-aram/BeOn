@@ -1,0 +1,29 @@
+import 'dart:convert';
+
+ChangeEmailResponse changeEmailResponseFromJson(String str) => ChangeEmailResponse.fromJson(json.decode(str));
+
+String changeEmailResponseToJson(ChangeEmailResponse data) => json.encode(data.toJson());
+
+class ChangeEmailResponse {
+    ChangeEmailResponse({
+        this.id,
+        this.email,
+        this.createdAt,
+    });
+
+    int id;
+    String email;
+    DateTime createdAt;
+
+    factory ChangeEmailResponse.fromJson(Map<String, dynamic> json) => ChangeEmailResponse(
+        id: json["id"],
+        email: json["email"],
+        createdAt: DateTime.parse(json["created_at"]),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "email": email,
+        "created_at": createdAt.toIso8601String(),
+    };
+}
