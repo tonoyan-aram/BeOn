@@ -10,11 +10,10 @@ xmlns:tools="http://schemas.android.com/tools"
 
    <application
        android:requestLegacyExternalStorage="true"
-       android:name="io.flutter.app.FlutterApplication"
+       android:name="beon"
        android:usesCleartextTraffic="true"
        android:label="BeOn Center"
-        android:icon="@mipmap/ic_launcher">
-        
+       android:icon="@mipmap/ic_launcher">
         <provider
             android:name="vn.hunghd.flutterdownloader.DownloadedFileProvider"
             android:authorities="${applicationId}.flutter_downloader.provider"
@@ -53,6 +52,7 @@ xmlns:tools="http://schemas.android.com/tools"
         <activity
 
             android:name=".MainActivity"
+            android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

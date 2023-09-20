@@ -1,4 +1,4 @@
-package com.example.beon
+package com.beon.app
 
 import io.flutter.embedding.android.FlutterActivity
 

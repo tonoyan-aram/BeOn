@@ -37,9 +37,10 @@ class CustomTextInput extends StatelessWidget {
         obscureText: isPassword,
         controller: controller,
         keyboardType: inputType,
-        inputFormatters: isspace == 0
-            ? [BlacklistingTextInputFormatter(RegExp(r"\s"))]
-            : null,
+        inputFormatters: [],
+        // inputFormatters: isspace == 0
+        //     ? [BlacklistingTextInputFormatter(RegExp(r"\s"))]
+        //     : null,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(
               left: MediaQuery.of(context).size.width * 18 / 375),

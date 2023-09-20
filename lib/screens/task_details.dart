@@ -88,7 +88,7 @@ class _TaskDetailsState extends State<TaskDetails> {
   int playingId;
   _TaskDetailsState(this.id, this.image);
 
-  Future<PickedFile> _imageFile;
+  Future<XFile> _imageFile;
   ImagePicker _picker = new ImagePicker();
   Function onFilePicked;
   String fileName;
@@ -1001,7 +1001,7 @@ class _TaskDetailsState extends State<TaskDetails> {
                                       padding: EdgeInsets.only(right: 10.0),
                                       child: GestureDetector(
                                         onTap: () {
-                                          _imageFile = _picker.getImage(
+                                          _imageFile = _picker.pickImage(
                                               source: ImageSource.gallery);
                                           _imageFile.then((file) => {
                                                 this.setState(() {

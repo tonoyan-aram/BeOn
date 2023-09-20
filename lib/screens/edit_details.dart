@@ -50,7 +50,7 @@ class _EditDetailsState extends State<EditDetails> {
 
   _EditDetailsState(this.id, this.title, this.activity, this.taxation);
 
-  Future<PickedFile> _imageFile;
+  Future<XFile> _imageFile;
   ImagePicker _picker = new ImagePicker();
   Function onFilePicked;
   String fileName;
@@ -1146,7 +1146,7 @@ class _EditDetailsState extends State<EditDetails> {
         //size: 12,
       ),
       onPressed: () {
-        _imageFile = _picker.getImage(source: ImageSource.gallery);
+        _imageFile = _picker.pickImage(source: ImageSource.gallery);
         _imageFile.then((file) => {
               this.setState(() {
                 onFilePicked(file);

@@ -16,7 +16,7 @@ class ImageUpload extends StatefulWidget {
 }
 
 class _ImageUploadState extends State<ImageUpload> {
-  Future<PickedFile> _imageFile;
+  Future<XFile> _imageFile;
   ImagePicker _picker = new ImagePicker();
   Function onFilePicked;
   String fileName;
@@ -79,7 +79,7 @@ class _ImageUploadState extends State<ImageUpload> {
                           onClick: () {
                             if (from == "company") {
                               if (!_hasImage) {
-                                _imageFile = _picker.getImage(
+                                _imageFile = _picker.pickImage(
                                     source: ImageSource.gallery);
                                 _imageFile.then((file) => {
                                       this.setState(() {
@@ -94,7 +94,7 @@ class _ImageUploadState extends State<ImageUpload> {
                             }
                             if (from == "editProfile") {
                               if (!_hasImage) {
-                                _imageFile = _picker.getImage(
+                                _imageFile = _picker.pickImage(
                                     source: ImageSource.gallery);
                                 _imageFile.then((file) => {
                                       this.setState(() {
@@ -109,7 +109,7 @@ class _ImageUploadState extends State<ImageUpload> {
                             }
                             if (from == "profile") {
                               if (!_hasImage) {
-                                _imageFile = _picker.getImage(
+                                _imageFile = _picker.pickImage(
                                     source: ImageSource.gallery);
                                 _imageFile.then((file) => {
                                       this.setState(() {
@@ -152,7 +152,7 @@ class _ImageUploadState extends State<ImageUpload> {
         //size: 12,
       ),
       onPressed: () {
-        _imageFile = _picker.getImage(source: ImageSource.gallery);
+        _imageFile = _picker.pickImage(source: ImageSource.gallery);
         _imageFile.then((file) => {
               this.setState(() {
                 onFilePicked(file);

@@ -46,7 +46,7 @@ class _AddCompanyState extends State<AddCompany> {
   final String fileNameString;
   _AddCompanyState(this.fileName1, this.fileNameString);
 
-  Future<PickedFile> _imageFile;
+  Future<XFile> _imageFile;
   ImagePicker _picker = new ImagePicker();
   Function onFilePicked;
   String fileName;
@@ -1027,7 +1027,7 @@ class _AddCompanyState extends State<AddCompany> {
         //size: 12,
       ),
       onPressed: () {
-        _imageFile = _picker.getImage(source: ImageSource.gallery);
+        _imageFile = _picker.pickImage(source: ImageSource.gallery);
         _imageFile.then((file) => {
               this.setState(() {
                 onFilePicked(file);
